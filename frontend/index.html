@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Job Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <h1 class="logo">Mini Job Portal</h1>
+      <nav class="nav">
+        <button id="nav-login" class="nav-btn active">Login</button>
+        <button id="nav-register" class="nav-btn">Register</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section id="auth-section" class="card">
+      <div id="login-view" class="auth-view visible">
+        <h2>Login</h2>
+        <form id="login-form">
+          <label>Email</label>
+          <input type="email" id="login-email" placeholder="you@example.com" required />
+
+          <label>Password</label>
+          <input type="password" id="login-password" placeholder="••••••••" required />
+
+          <button type="submit">Login</button>
+          <p class="helper-text">
+            New here?
+            <span class="linkish" id="go-register">Create an account</span>
+          </p>
+        </form>
+      </div>
+
+      <div id="register-view" class="auth-view">
+        <h2>Create Account</h2>
+        <form id="register-form">
+          <label>Full Name</label>
+          <input type="text" id="register-name" placeholder="Your name" required />
+
+          <label>Email</label>
+          <input type="email" id="register-email" placeholder="you@example.com" required />
+
+          <label>Password</label>
+          <input type="password" id="register-password" placeholder="Minimum 6 characters" required />
+
+          <label>Role</label>
+          <select id="register-role">
+            <option value="candidate">Candidate</option>
+            <option value="employer">Employer</option>
+          </select>
+
+          <button type="submit">Register</button>
+          <p class="helper-text">
+            Already have an account?
+            <span class="linkish" id="go-login">Back to login</span>
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <section id="jobs-section" class="card">
+      <div class="jobs-header">
+        <h2>Jobs</h2>
+        <div class="jobs-toolbar">
+          <span id="current-user-label" class="user-pill hidden"></span>
+          <button id="btn-logout" class="secondary-btn hidden">Logout</button>
+        </div>
+      </div>
+
+      <div id="jobs-unauth" class="jobs-empty">
+        <p>Please login to view jobs.</p>
+      </div>
+
+      <div id="jobs-loading" class="jobs-empty hidden">
+        <div class="spinner"></div>
+        <p>Loading jobs...</p>
+      </div>
+
+      <ul id="jobs-list" class="jobs-list hidden"></ul>
+
+      <div id="jobs-empty" class="jobs-empty hidden">
+        <p>No jobs found.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Mini Job Portal &copy; 2025</small>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
